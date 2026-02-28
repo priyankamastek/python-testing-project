@@ -1,4 +1,3 @@
-Notepad pointers:
 Automation Testing
  
 Automated testing is the execution of your test plan (the parts of your application you want to test, the order in which you want to test them, and the expected responses) by a script instead of a human.
@@ -8,7 +7,7 @@ Python already comes with a set of tools and libraries to help you create automa
 Two type of testing
  
 functional testing - Black-box , white-box
-Black box - actual functionality of the code
+Black box - 
 white box -testing logic, code, structures to verify the behavior of the components (small unit - function..)
  
 unit test can test - specific path, logic, branches (Control statements). Ensures maximum coverage identification, dead code.
