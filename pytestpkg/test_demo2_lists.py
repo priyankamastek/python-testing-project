@@ -1,3 +1,13 @@
+# How to run only selected test file?
+# py.test -v pytestpkg/test_demo2_lists.py
+# To run specific test case from the file -
+# py.test -v pytestpkg/test_demo2_lists.py::test_compare_two_list_equality
+# To Group tests from different files based on regular expression like common word in the test case name with -k option
+# py.test -k list -v
+# -k - stands for method name execution
+# -s - stands for logs in the output
+# -v - stands for more info metadata
+
 import pytest
 
 # python function for testing
@@ -96,7 +106,8 @@ Generic parametrized test template.
     ],
 )
 def test_is_list_param(value, expected):
-    assert isinstance(value, list) is expected
+    print(f" Inside parameterized test : value - { value} , expected - {expected }")
+    assert isinstance(value, tuple) is expected
 
 
 # Assignments

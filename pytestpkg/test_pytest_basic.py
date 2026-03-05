@@ -1,21 +1,44 @@
+# Smoke - A minimal set of basic tests run to ensure the application is stable enough for deeper testing.
+# Example: If the build fails the basic tests → stop testing.
+# You can mark (tag) these tests @pytest.mark.smoke and then run with -m option. -m means mark
+# py.test -m smoke -v
+
+# To skip test -  @pytest.mark.skip
+# To run the test but not to report pass or fail - @pytest.mark.xfail
+
 import pytest
 
+@pytest.fixture()
+def setup():
+    print("This is setup executed before the test")
+@pytest.fixture()
+def teardown():
+    print("This is teardown executed after the test")
+    pass
+
+#@pytest.mark.skip(reason="Not implemented")
+#@pytest.mark.smoke
+@pytest.mark.xfail
 def test_sum():
     assert sum([1, 2, 3]) == 10, "Should be 6"
 
+@pytest.mark.usefixtures("setup")
 def test_string():
     message = "hello"
     assert message == "hello world", "Actual string not match with expected string 'hello'"
 
+#pytest.mark.smoke - customized markers
+@pytest.mark.smoke
 def test_string_startswith():
     text = "Python"
     assert text.startswith("Py")
 
+@pytest.mark.usefixtures("setup", "teardown")
 def test_string_endswith():
     text = "Python"
     assert text.endswith("thon")
 
-
+@pytest.mark.usefixtures("setup")
 def test_string_lowercase():
     text = "HELLO"
     assert text.lower() == "hello"

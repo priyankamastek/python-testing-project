@@ -5,7 +5,12 @@
 
 """
 To run all test files in the package
-on terminal run: pytest -v
+on terminal run: pytest -v or py.test -v
+Internally pytest creates a cache directory
+.pytest_cache - A folder used by pytest to store internal cache
+PurposeSpeed up test runs, track failures, store metadata
+In Pytest, console output will not be shown. To show that, run : py.test -v -s
+In Pytest, every function is treated as a test case
 """
 import pytest
 
@@ -35,8 +40,10 @@ def test_calculate_sum():
     # Act
     result = calculate_sum_values(data)
 
+    print ("HELLO")
+
     # Assert
-    assert result == 15, "Test failed because lists do not match"
+    assert result == 60, "Test failed because lists do not match"
 
 
 def test_sorted_vs_sort():
