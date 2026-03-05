@@ -1,0 +1,15 @@
+# To generate html test reports with all testcases details
+# pip install pytest-html
+# pytest --html=report.html
+# pytest --html=report.html -s
+
+
+# To generate html test coverage report:
+# run tests
+# measure coverage for the package named pytestpkg
+
+# pip install pytest-cov
+# pytest --cov=pytestpkg -q
+# To generate html
+# pytest --cov=pytestpkg --cov-report=html
+
