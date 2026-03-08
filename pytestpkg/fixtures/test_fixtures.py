@@ -1,5 +1,4 @@
 # module level fixtures
-
 import pytest
 
 # By default any fuxtures in the py file along with test cases are called Module Level Fixtures
